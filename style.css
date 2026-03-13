@@ -7,6 +7,7 @@
 html,body{
     width:100%;
     height:100%;
+    font-family:'Inter', sans-serif;
 }
 
 :root{
@@ -21,25 +22,84 @@ main{
     overflow:hidden;
 }
 
-/* background video */
 main video{
     position:absolute;
     width:100%;
     height:100%;
-    object-fit:cover;
+    object-fit:cover; 
+    z-index:1;
 }
 
-/* spotlight overlay */
+
+/* HERO TEXT CONTAINER */
+.text{
+    position:absolute;
+    width:100%;
+    height:100%;
+    padding: 40% 0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    color:white;
+
+    z-index:3; /* above spotlight overlay */
+}
+
+
+/* TITLE STYLE */
+.text h1{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:60px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.text p{
+    margin-top:15px;
+    font-size:25px;
+    color:#d1d1d1;
+}
+
+.btn{
+
+    margin-top:30px;
+    padding:12px 30px;
+
+    background:transparent;
+    border:1px solid white;
+    border-radius: 5px;
+
+    color:white;
+    font-size:15px;
+    letter-spacing:2px;
+
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+.btn:hover{
+    background:white;
+    color:black;
+    box-shadow:0 0 20px rgba(255,255,255,0.7);
+}
+
+
+/* SPOTLIGHT OVERLAY */
 .box{
+
     position:fixed;
     width:100%;
     height:100%;
+
     z-index:2;
 
-    background: radial-gradient(
-        200px at var(--x) var(--y),
+    background:radial-gradient(
+        220px at var(--x) var(--y),
         rgba(0,0,0,0),
         rgba(0,0,0,0.96)
     );
-
 }
